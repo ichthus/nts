@@ -94,6 +94,7 @@
             this.SearchButton.TabIndex = 6;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // CancelButton
             // 
@@ -104,6 +105,7 @@
             this.CancelButton.TabIndex = 7;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // ResultBox
             // 
@@ -133,7 +135,6 @@
             this.MaximizeBox = false;
             this.Name = "EditItem";
             this.Text = "Edit Item";
-            this.Load += new System.EventHandler(this.EditItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

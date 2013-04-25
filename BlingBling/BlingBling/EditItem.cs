@@ -16,9 +16,14 @@ namespace BlingBling
             InitializeComponent();
         }
 
-        private void EditItem_Load(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

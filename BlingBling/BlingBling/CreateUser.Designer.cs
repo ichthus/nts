@@ -125,6 +125,7 @@
             this.CreateButton.TabIndex = 9;
             this.CreateButton.Text = "Create User";
             this.CreateButton.UseVisualStyleBackColor = true;
+            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // CancelButton
             // 
@@ -135,6 +136,7 @@
             this.CancelButton.TabIndex = 10;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // CreateUser
             // 

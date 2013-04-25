@@ -16,12 +16,12 @@ namespace BlingBling
             InitializeComponent();
         }
 
-        private void AmountLabel_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void AddItem_Load(object sender, EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
 
         }

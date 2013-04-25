@@ -58,7 +58,6 @@
             this.AmountLabel.Size = new System.Drawing.Size(106, 27);
             this.AmountLabel.TabIndex = 1;
             this.AmountLabel.Text = "Amount: $";
-            this.AmountLabel.Click += new System.EventHandler(this.AmountLabel_Click);
             // 
             // AmountTextBox
             // 
@@ -104,6 +103,7 @@
             this.AddButton.TabIndex = 5;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // CancelButton
             // 
@@ -114,6 +114,7 @@
             this.CancelButton.TabIndex = 6;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // DateLabel
             // 
@@ -152,7 +153,7 @@
             this.MaximizeBox = false;
             this.Name = "AddItem";
             this.Text = "Add Expenditure";
-            this.Load += new System.EventHandler(this.AddItem_Load);
+
             this.ResumeLayout(false);
             this.PerformLayout();
 

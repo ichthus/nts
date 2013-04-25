@@ -75,6 +75,7 @@
             this.GoBackButton.TabIndex = 9;
             this.GoBackButton.Text = "Go Back";
             this.GoBackButton.UseVisualStyleBackColor = true;
+            this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
             // 
             // EditButton
             // 
@@ -85,6 +86,7 @@
             this.EditButton.TabIndex = 10;
             this.EditButton.Text = "Edit/Delete Item";
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // BudgetWizard
             // 

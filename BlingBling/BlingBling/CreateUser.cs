@@ -20,5 +20,15 @@ namespace BlingBling
         {
 
         }
+
+        private void CreateButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -21,5 +21,22 @@ namespace BlingBling
             this.Close();
         }
 
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            Form w = null;
+            if (UsernameTextBox.Text == "admin")
+            {
+                w = new WelcomeAdmin();
+            }
+            else
+            {
+                w = new WelcomePage();
+            }
+            //on successful login
+            this.Hide();
+            w.ShowDialog();
+            this.Close();
+        }
+
     }
 }

@@ -23,7 +23,23 @@ namespace BlingBling
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            Form w = new AddItem();
+            this.Hide();
+            w.ShowDialog();
+            this.Show();
+        }
 
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            Form w = new EditItem();
+            this.Hide();
+            w.ShowDialog();
+            this.Show();
+        }
+
+        private void GoBackButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

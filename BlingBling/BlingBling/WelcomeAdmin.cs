@@ -15,5 +15,34 @@ namespace BlingBling
         {
             InitializeComponent();
         }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ReportButton_Click(object sender, EventArgs e)
+        {
+            Form w = new ReportPage();
+            this.Hide();
+            w.ShowDialog();
+            this.Show();
+        }
+
+        private void BudgetWizardButton_Click(object sender, EventArgs e)
+        {
+            Form w = new BudgetWizard();
+            this.Hide();
+            w.ShowDialog();
+            this.Show();
+        }
+
+        private void CreateUserButton_Click(object sender, EventArgs e)
+        {
+            Form w = new CreateUser();
+            this.Hide();
+            w.ShowDialog();
+            this.Show();
+        }
     }
 }

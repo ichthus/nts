@@ -53,6 +53,7 @@
             this.BudgetWizardButton.TabIndex = 1;
             this.BudgetWizardButton.Text = "Budget Wizard";
             this.BudgetWizardButton.UseVisualStyleBackColor = true;
+            this.BudgetWizardButton.Click += new System.EventHandler(this.BudgetWizardButton_Click);
             // 
             // ReportButton
             // 
@@ -63,6 +64,7 @@
             this.ReportButton.TabIndex = 4;
             this.ReportButton.Text = "Report";
             this.ReportButton.UseVisualStyleBackColor = true;
+            this.ReportButton.Click += new System.EventHandler(this.ReportButton_Click);
             // 
             // LogoutButton
             // 
@@ -73,6 +75,7 @@
             this.LogoutButton.TabIndex = 5;
             this.LogoutButton.Text = "Log Out";
             this.LogoutButton.UseVisualStyleBackColor = true;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // WelcomePage
             // 
