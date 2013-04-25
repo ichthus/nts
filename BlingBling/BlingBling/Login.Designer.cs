@@ -100,6 +100,7 @@
             this.QuitButton.TabIndex = 6;
             this.QuitButton.Text = "Quit";
             this.QuitButton.UseVisualStyleBackColor = true;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
             // LoginPage
             // 
