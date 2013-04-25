@@ -59,6 +59,7 @@
             // 
             // UsernameTextBox
             // 
+            this.UsernameTextBox.BackColor = System.Drawing.Color.White;
             this.UsernameTextBox.Location = new System.Drawing.Point(296, 232);
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(198, 20);
@@ -76,6 +77,7 @@
             // 
             // PasswordTextBox
             // 
+            this.PasswordTextBox.BackColor = System.Drawing.Color.White;
             this.PasswordTextBox.Location = new System.Drawing.Point(296, 298);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(198, 20);
@@ -115,9 +117,10 @@
             this.Controls.Add(this.UsernameTextBox);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "LoginPage";
             this.Text = "Login";
-            this.TransparencyKey = System.Drawing.Color.White;
             this.ResumeLayout(false);
             this.PerformLayout();
 

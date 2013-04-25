@@ -97,6 +97,8 @@
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "BudgetWizard";
             this.Text = "Budget Wizard";
             this.Load += new System.EventHandler(this.BudgetWizard_Load);

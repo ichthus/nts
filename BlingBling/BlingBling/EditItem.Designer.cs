@@ -30,11 +30,12 @@
         {
             this.Title = new System.Windows.Forms.Label();
             this.BeginDateLabel = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.BeginDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.EndDateLabel = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.EndDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SearchButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+            this.ResultBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // Title
@@ -57,13 +58,13 @@
             this.BeginDateLabel.TabIndex = 1;
             this.BeginDateLabel.Text = "Begin Date:";
             // 
-            // dateTimePicker1
+            // BeginDateTimePicker
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(257, 151);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(270, 26);
-            this.dateTimePicker1.TabIndex = 3;
+            this.BeginDateTimePicker.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BeginDateTimePicker.Location = new System.Drawing.Point(257, 151);
+            this.BeginDateTimePicker.Name = "BeginDateTimePicker";
+            this.BeginDateTimePicker.Size = new System.Drawing.Size(270, 26);
+            this.BeginDateTimePicker.TabIndex = 3;
             // 
             // EndDateLabel
             // 
@@ -75,14 +76,14 @@
             this.EndDateLabel.TabIndex = 4;
             this.EndDateLabel.Text = "End Date:";
             // 
-            // dateTimePicker2
+            // EndDateTimePicker
             // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(259, 205);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(268, 26);
-            this.dateTimePicker2.TabIndex = 5;
+            this.EndDateTimePicker.CalendarFont = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndDateTimePicker.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndDateTimePicker.Location = new System.Drawing.Point(259, 205);
+            this.EndDateTimePicker.Name = "EndDateTimePicker";
+            this.EndDateTimePicker.Size = new System.Drawing.Size(268, 26);
+            this.EndDateTimePicker.TabIndex = 5;
             // 
             // SearchButton
             // 
@@ -104,19 +105,32 @@
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             // 
+            // ResultBox
+            // 
+            this.ResultBox.BackColor = System.Drawing.Color.Azure;
+            this.ResultBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ResultBox.Location = new System.Drawing.Point(150, 253);
+            this.ResultBox.Name = "ResultBox";
+            this.ResultBox.Size = new System.Drawing.Size(359, 80);
+            this.ResultBox.TabIndex = 8;
+            this.ResultBox.Text = "";
+            // 
             // EditItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(659, 476);
+            this.Controls.Add(this.ResultBox);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.EndDateTimePicker);
             this.Controls.Add(this.EndDateLabel);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.BeginDateTimePicker);
             this.Controls.Add(this.BeginDateLabel);
             this.Controls.Add(this.Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "EditItem";
             this.Text = "Edit Item";
             this.Load += new System.EventHandler(this.EditItem_Load);
@@ -129,11 +143,12 @@
 
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Label BeginDateLabel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker BeginDateTimePicker;
         private System.Windows.Forms.Label EndDateLabel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker EndDateTimePicker;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.RichTextBox ResultBox;
 
     }
 }

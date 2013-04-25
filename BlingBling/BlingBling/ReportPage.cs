@@ -9,11 +9,12 @@ using System.Windows.Forms;
 
 namespace BlingBling
 {
-    public partial class Report : Form
+    public partial class ReportPage : Form
     {
-        public Report()
+        public ReportPage()
         {
             InitializeComponent();
         }
+
     }
 }

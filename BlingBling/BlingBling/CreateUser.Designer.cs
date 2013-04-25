@@ -62,6 +62,7 @@
             // 
             // UsernameTextBox
             // 
+            this.UsernameTextBox.BackColor = System.Drawing.Color.White;
             this.UsernameTextBox.Location = new System.Drawing.Point(318, 129);
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(138, 20);
@@ -79,6 +80,7 @@
             // 
             // PasswordTextBox
             // 
+            this.PasswordTextBox.BackColor = System.Drawing.Color.White;
             this.PasswordTextBox.Location = new System.Drawing.Point(318, 181);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(138, 20);
@@ -97,6 +99,7 @@
             // 
             // PasswordTextBox2
             // 
+            this.PasswordTextBox2.BackColor = System.Drawing.Color.White;
             this.PasswordTextBox2.Location = new System.Drawing.Point(318, 233);
             this.PasswordTextBox2.Name = "PasswordTextBox2";
             this.PasswordTextBox2.Size = new System.Drawing.Size(138, 20);
@@ -149,6 +152,8 @@
             this.Controls.Add(this.UsernameTextBox);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CreateUser";
             this.Text = "Create User";
             this.ResumeLayout(false);

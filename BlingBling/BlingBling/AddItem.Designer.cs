@@ -148,6 +148,8 @@
             this.Controls.Add(this.AmountTextBox);
             this.Controls.Add(this.AmountLabel);
             this.Controls.Add(this.Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AddItem";
             this.Text = "Add Expenditure";
             this.Load += new System.EventHandler(this.AddItem_Load);

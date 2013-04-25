@@ -96,6 +96,8 @@
             this.Controls.Add(this.ReportButton);
             this.Controls.Add(this.BudgetWizardButton);
             this.Controls.Add(this.Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "WelcomeAdmin";
             this.Text = "Welcome Page (Admin)";
             this.ResumeLayout(false);

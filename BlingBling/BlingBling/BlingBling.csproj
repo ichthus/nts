@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="Administrator.cs" />
+    <Compile Include="BudgetCategory.cs" />
+    <Compile Include="BudgetItem.cs" />
+    <Compile Include="DbDriver.cs" />
+    <Compile Include="main.cs" />
+    <Compile Include="Report.cs" />
     <Compile Include="CreateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +145,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="database.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
