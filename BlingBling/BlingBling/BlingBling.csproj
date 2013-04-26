@@ -56,7 +56,6 @@
     <Compile Include="Administrator.cs" />
     <Compile Include="BudgetCategory.cs" />
     <Compile Include="BudgetItem.cs" />
-    <Compile Include="DbDriver.cs" />
     <Compile Include="main.cs" />
     <Compile Include="Report.cs" />
     <Compile Include="CreateUser.cs">
@@ -142,6 +141,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bling.db" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
