@@ -40,8 +40,8 @@
       this.DescriptionLabel = new System.Windows.Forms.Label();
       this.DescriptionTextBox = new System.Windows.Forms.TextBox();
       this.SuccessTextBox = new System.Windows.Forms.RichTextBox();
-      this.sqLiteConnection1 = new System.Data.SQLite.SQLiteConnection();
-      this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
+      this.sqlConn = new System.Data.SQLite.SQLiteConnection();
+      this.sqlDoReport = new System.Data.SQLite.SQLiteCommand();
       this.SuspendLayout();
       // 
       // Title
@@ -168,15 +168,16 @@
       this.SuccessTextBox.TabIndex = 11;
       this.SuccessTextBox.Text = "";
       // 
-      // sqLiteConnection1
+      // sqlConn
       // 
-      this.sqLiteConnection1.DefaultTimeout = 30;
-      this.sqLiteConnection1.Flags = System.Data.SQLite.SQLiteConnectionFlags.LogCallbackException;
-      this.sqLiteConnection1.ParseViaFramework = false;
+      this.sqlConn.ConnectionString = "Data Source=D:\\Users\\gregg\\Documents\\GitHub\\nts\\BlingBling\\BlingBling\\bling.db";
+      this.sqlConn.DefaultTimeout = 30;
+      this.sqlConn.Flags = System.Data.SQLite.SQLiteConnectionFlags.LogCallbackException;
+      this.sqlConn.ParseViaFramework = false;
       // 
-      // sqLiteCommand1
+      // sqlDoReport
       // 
-      this.sqLiteCommand1.CommandText = null;
+      this.sqlDoReport.CommandText = null;
       // 
       // AddItem
       // 
@@ -220,7 +221,7 @@
         private System.Windows.Forms.Label DescriptionLabel;
         private System.Windows.Forms.TextBox DescriptionTextBox;
         private System.Windows.Forms.RichTextBox SuccessTextBox;
-        private System.Data.SQLite.SQLiteConnection sqLiteConnection1;
-        private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
+        private System.Data.SQLite.SQLiteConnection sqlConn;
+        private System.Data.SQLite.SQLiteCommand sqlDoReport;
     }
 }
