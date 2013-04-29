@@ -73,9 +73,11 @@
       this.UsernameTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
       this.UsernameTextBox.Location = new System.Drawing.Point(318, 168);
       this.UsernameTextBox.Name = "UsernameTextBox";
+      this.UsernameTextBox.ShortcutsEnabled = false;
       this.UsernameTextBox.Size = new System.Drawing.Size(138, 20);
       this.UsernameTextBox.TabIndex = 2;
       this.UsernameTextBox.TextChanged += new System.EventHandler(this.UsernameTextBox_TextChanged);
+      this.UsernameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsernameTextBox_KeyPress);
       // 
       // PasswordLabel
       // 

@@ -40,5 +40,19 @@ namespace BlingBling
           
 
         }
+
+        private void UsernameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          string charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_-+=";
+          if (charset.Contains(e.KeyChar.ToString()))
+          {
+          }
+          else
+          {
+            e.Handled = true;
+          }
+
+        }
+
     }
 }
