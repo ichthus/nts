@@ -40,6 +40,8 @@
       this.DescriptionLabel = new System.Windows.Forms.Label();
       this.DescriptionTextBox = new System.Windows.Forms.TextBox();
       this.SuccessTextBox = new System.Windows.Forms.RichTextBox();
+      this.sqLiteConnection1 = new System.Data.SQLite.SQLiteConnection();
+      this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
       this.SuspendLayout();
       // 
       // Title
@@ -166,6 +168,16 @@
       this.SuccessTextBox.TabIndex = 11;
       this.SuccessTextBox.Text = "";
       // 
+      // sqLiteConnection1
+      // 
+      this.sqLiteConnection1.DefaultTimeout = 30;
+      this.sqLiteConnection1.Flags = System.Data.SQLite.SQLiteConnectionFlags.LogCallbackException;
+      this.sqLiteConnection1.ParseViaFramework = false;
+      // 
+      // sqLiteCommand1
+      // 
+      this.sqLiteCommand1.CommandText = null;
+      // 
       // AddItem
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,5 +220,7 @@
         private System.Windows.Forms.Label DescriptionLabel;
         private System.Windows.Forms.TextBox DescriptionTextBox;
         private System.Windows.Forms.RichTextBox SuccessTextBox;
+        private System.Data.SQLite.SQLiteConnection sqLiteConnection1;
+        private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
     }
 }

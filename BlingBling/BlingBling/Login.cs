@@ -32,13 +32,13 @@ namespace BlingBling
         private void LoginButton_Click(object sender, EventArgs e)
         {
           SQLiteDataReader sqldr;
-          SHA512 shaM = new SHA512Managed();
+          passhasher ph = new passhasher();
           Form w = null;
 
           sqlConn.Open();
           errLogin.Clear();
 
-          string phash = GetSHA512Hash(shaM, PasswordTextBox.Text);
+          string phash = ph.GetSHA512Hash(PasswordTextBox.Text);
 
           string sqlstmt = "SELECT nts_users.username, nts_users.password, nts_users.realname, nts_users.lastlogin, nts_users.userkey, nts_admins.userkey AS admin FROM nts_users LEFT OUTER JOIN nts_admins ON nts_users.userkey = nts_admins.userkey where nts_users.username = '"+UsernameTextBox.Text+"' and nts_users.password = '"+phash+"'";
 
@@ -72,52 +72,7 @@ namespace BlingBling
           this.Close();
         }
 
-        static string GetSHA512Hash(SHA512 sha512Hash, string input)
-        {
-
-          // Convert the input string to a byte array and compute the hash. 
-          byte[] data = sha512Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
-
-          // Create a new Stringbuilder to collect the bytes 
-          // and create a string.
-          StringBuilder sBuilder = new StringBuilder();
-
-          // Loop through each byte of the hashed data  
-          // and format each one as a hexadecimal string. 
-          for (int i = 0; i < data.Length; i++)
-          {
-            sBuilder.Append(data[i].ToString("x2"));
-          }
-
-          // Return the hexadecimal string. 
-          return sBuilder.ToString();
-        }
-
-        // Verify a hash against a string. 
-        static bool VerifySHA512Hash(SHA512 sha512Hash, string input, string hash)
-        {
-          // Hash the input. 
-          string hashOfInput = GetSHA512Hash(sha512Hash, input);
-
-          // Create a StringComparer an compare the hashes.
-          StringComparer comparer = StringComparer.OrdinalIgnoreCase;
-
-          if (0 == comparer.Compare(hashOfInput, hash))
-          {
-            return true;
-          }
-          else
-          {
-            return false;
-          }
-        }
-
     }
-
-   
-
-
-
 }
 
 

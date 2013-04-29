@@ -43,8 +43,8 @@
       this.sqlDoCreate = new System.Data.SQLite.SQLiteCommand();
       this.nameTextBox = new System.Windows.Forms.TextBox();
       this.nameLabel = new System.Windows.Forms.Label();
-      this.errorValidation = new System.Windows.Forms.ErrorProvider(this.components);
-      ((System.ComponentModel.ISupportInitialize)(this.errorValidation)).BeginInit();
+      this.errorChecker = new System.Windows.Forms.ErrorProvider(this.components);
+      ((System.ComponentModel.ISupportInitialize)(this.errorChecker)).BeginInit();
       this.SuspendLayout();
       // 
       // Title
@@ -180,9 +180,9 @@
       this.nameLabel.TabIndex = 11;
       this.nameLabel.Text = "Real Name:";
       // 
-      // errorValidation
+      // errorChecker
       // 
-      this.errorValidation.ContainerControl = this;
+      this.errorChecker.ContainerControl = this;
       // 
       // CreateUser
       // 
@@ -206,7 +206,7 @@
       this.MaximizeBox = false;
       this.Name = "CreateUser";
       this.Text = "Create User";
-      ((System.ComponentModel.ISupportInitialize)(this.errorValidation)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.errorChecker)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -228,6 +228,6 @@
         private System.Data.SQLite.SQLiteCommand sqlDoCreate;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.ErrorProvider errorValidation;
+        private System.Windows.Forms.ErrorProvider errorChecker;
     }
 }

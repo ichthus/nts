@@ -37,9 +37,9 @@ namespace BlingBling
             this.Show();
         }
 
-        private void CreateUserButton_Click(object sender, EventArgs e)
+        private void ManageUserButton_Click(object sender, EventArgs e)
         {
-            Form w = new CreateUser();
+            Form w = new ManageUsers();
             this.Hide();
             w.ShowDialog();
             this.Show();

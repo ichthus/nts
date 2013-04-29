@@ -113,7 +113,7 @@
       // 
       // sqlConn
       // 
-      this.sqlConn.ConnectionString = "Data Source=d:\\Users\\gregg\\Documents\\GitHub\\nts\\BlingBling\\BlingBling\\bling.db";
+      this.sqlConn.ConnectionString = "Data Source=D:\\Users\\gregg\\Documents\\GitHub\\nts\\BlingBling\\BlingBling\\bling.db";
       this.sqlConn.DefaultTimeout = 30;
       this.sqlConn.Flags = System.Data.SQLite.SQLiteConnectionFlags.LogCallbackException;
       this.sqlConn.ParseViaFramework = false;
@@ -144,7 +144,7 @@
       this.MaximizeBox = false;
       this.Name = "LoginPage";
       this.Text = "Login";
-      this.Load += new System.EventHandler(LoginPage_Load);
+      this.Load += new System.EventHandler(this.LoginPage_Load);
       ((System.ComponentModel.ISupportInitialize)(this.errLogin)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();

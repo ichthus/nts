@@ -36,6 +36,8 @@
       this.SearchButton = new System.Windows.Forms.Button();
       this.CancelButton = new System.Windows.Forms.Button();
       this.ResultBox = new System.Windows.Forms.RichTextBox();
+      this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
+      this.sqLiteConnection1 = new System.Data.SQLite.SQLiteConnection();
       this.SuspendLayout();
       // 
       // label1
@@ -118,6 +120,16 @@
       this.ResultBox.TabIndex = 9;
       this.ResultBox.Text = "";
       // 
+      // sqLiteCommand1
+      // 
+      this.sqLiteCommand1.CommandText = null;
+      // 
+      // sqLiteConnection1
+      // 
+      this.sqLiteConnection1.DefaultTimeout = 30;
+      this.sqLiteConnection1.Flags = System.Data.SQLite.SQLiteConnectionFlags.LogCallbackException;
+      this.sqLiteConnection1.ParseViaFramework = false;
+      // 
       // ReportPage
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,5 +164,7 @@
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.RichTextBox ResultBox;
+        private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
+        private System.Data.SQLite.SQLiteConnection sqLiteConnection1;
     }
 }
