@@ -25,5 +25,10 @@ namespace BlingBling
         {
             this.Close();
         }
+
+        private void EditItem_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

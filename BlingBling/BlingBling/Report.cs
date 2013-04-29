@@ -4,23 +4,24 @@ public class Report
 {
     
 	private     BudgetItem[]  _aBudget;		//array of budget items
-	private     string      _beginDate;		//begin date of report
-	private     string      _endDate;		//end date of report
+	private     DateTime      _beginDate;		//begin date of report
+	private     DateTime      _endDate;		//end date of report
     
-    public Report()
+    public Report(DateTime bdate, DateTime edate)
     {
-        
-        //
+      _beginDate = bdate;
+      _endDate = edate;
+      // fill array with budget items
     }
 	
-	public string BeginDate
+	public DateTime BeginDate
 	{
 		get {return _beginDate;}
 		set {_beginDate = value;}
 	}
     
 	
-	public string EndDate
+	public DateTime EndDate
 	{
 		get {return _endDate;}
 		set {_endDate = value;}

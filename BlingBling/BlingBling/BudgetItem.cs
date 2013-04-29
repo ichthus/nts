@@ -11,19 +11,20 @@ CREATE TABLE IF NOT EXISTS `nts_budget_items` (
 ) ENGINE = MYISAM ;
 
 */
+using System;
 
 public class BudgetItem
 {
 	private float _amt;  	//The amount of the item
 	private string _category; // category of item (Income, Bill, Grocery, Household item, Clothing, Entertaniment, Misc)
 	private string _desc;	//The descriptor of the item 
-	private string _date;	//The date the item occurs
+	private DateTime _date;	//The date the item occurs
 	private int _id;		//The ID of the item
 	
 	public BudgetItem()
 	{}
 
-	public BudgetItem(string date, string category, string desc, float amt)
+	public BudgetItem(DateTime date, string category, string desc, float amt)
 	{
 		_amt=amt;
 		_category=category;
@@ -43,7 +44,7 @@ public class BudgetItem
 		set {_amt = value;}
 	}
 	
-	public string Date
+	public DateTime Date
 	{
 		get {return _date;}
 		set {_date = value;}

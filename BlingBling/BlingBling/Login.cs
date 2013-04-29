@@ -21,6 +21,9 @@ namespace BlingBling
             InitializeComponent();
         }
 
+        private void LoginPage_Load(object sender, EventArgs e) { }
+
+
         private void QuitButton_Click(object sender, EventArgs e)
         {
             this.Close();

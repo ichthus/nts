@@ -21,7 +21,18 @@ namespace BlingBling
             this.Close();
         }
 
+        private void ReportButton_Click(object sender, EventArgs e)
+        {
+          Report newReport = new Report(Convert.ToDateTime(BeginDateTimePicker.Text), Convert.ToDateTime(EndDateTimePicker.Text));
+          ResultBox.Text = newReport.process();
+        }
+
         private void SearchButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReportPage_Load(object sender, EventArgs e)
         {
 
         }

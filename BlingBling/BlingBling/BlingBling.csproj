@@ -56,6 +56,12 @@
     <Compile Include="Administrator.cs" />
     <Compile Include="BudgetCategory.cs" />
     <Compile Include="BudgetItem.cs" />
+    <Compile Include="EditAnItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditAnItem.designer.cs">
+      <DependentUpon>EditAnItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="main.cs" />
     <Compile Include="Report.cs" />
     <Compile Include="CreateUser.cs">
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddItem.resx">
       <DependentUpon>AddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditAnItem.resx">
+      <DependentUpon>EditAnItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditItem.resx">
       <DependentUpon>EditItem.cs</DependentUpon>
