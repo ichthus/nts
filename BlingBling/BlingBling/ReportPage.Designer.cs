@@ -36,8 +36,8 @@
       this.SearchButton = new System.Windows.Forms.Button();
       this.CancelButton = new System.Windows.Forms.Button();
       this.ResultBox = new System.Windows.Forms.RichTextBox();
-      this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
-      this.sqLiteConnection1 = new System.Data.SQLite.SQLiteConnection();
+      this.sqlDoReport = new System.Data.SQLite.SQLiteCommand();
+      this.sqlConn = new System.Data.SQLite.SQLiteConnection();
       this.SuspendLayout();
       // 
       // label1
@@ -90,7 +90,7 @@
       // SearchButton
       // 
       this.SearchButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.SearchButton.Location = new System.Drawing.Point(168, 344);
+      this.SearchButton.Location = new System.Drawing.Point(168, 378);
       this.SearchButton.Name = "SearchButton";
       this.SearchButton.Size = new System.Drawing.Size(132, 33);
       this.SearchButton.TabIndex = 7;
@@ -101,7 +101,7 @@
       // CancelButton
       // 
       this.CancelButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CancelButton.Location = new System.Drawing.Point(359, 344);
+      this.CancelButton.Location = new System.Drawing.Point(359, 378);
       this.CancelButton.Name = "CancelButton";
       this.CancelButton.Size = new System.Drawing.Size(132, 33);
       this.CancelButton.TabIndex = 8;
@@ -116,19 +116,20 @@
       this.ResultBox.Location = new System.Drawing.Point(148, 265);
       this.ResultBox.Name = "ResultBox";
       this.ResultBox.ReadOnly = true;
-      this.ResultBox.Size = new System.Drawing.Size(363, 52);
+      this.ResultBox.Size = new System.Drawing.Size(363, 107);
       this.ResultBox.TabIndex = 9;
       this.ResultBox.Text = "";
+      this.ResultBox.TextChanged += new System.EventHandler(this.ResultBox_TextChanged);
       // 
-      // sqLiteCommand1
+      // sqlDoReport
       // 
-      this.sqLiteCommand1.CommandText = null;
+      this.sqlDoReport.CommandText = null;
       // 
-      // sqLiteConnection1
+      // sqlConn
       // 
-      this.sqLiteConnection1.DefaultTimeout = 30;
-      this.sqLiteConnection1.Flags = System.Data.SQLite.SQLiteConnectionFlags.LogCallbackException;
-      this.sqLiteConnection1.ParseViaFramework = false;
+      this.sqlConn.DefaultTimeout = 30;
+      this.sqlConn.Flags = System.Data.SQLite.SQLiteConnectionFlags.LogCallbackException;
+      this.sqlConn.ParseViaFramework = false;
       // 
       // ReportPage
       // 
@@ -164,7 +165,7 @@
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.RichTextBox ResultBox;
-        private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
-        private System.Data.SQLite.SQLiteConnection sqLiteConnection1;
+        private System.Data.SQLite.SQLiteCommand sqlDoReport;
+        private System.Data.SQLite.SQLiteConnection sqlConn;
     }
 }

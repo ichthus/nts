@@ -34,6 +34,11 @@ namespace BlingBling
 
         private void ReportPage_Load(object sender, EventArgs e)
         {
+          BeginDateTimePicker.Text = DateTime.Now.AddMonths(-1).ToString();
+        }
+
+        private void ResultBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
 

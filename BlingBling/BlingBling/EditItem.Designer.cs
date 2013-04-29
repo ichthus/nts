@@ -33,11 +33,12 @@
       this.BeginDateTimePicker = new System.Windows.Forms.DateTimePicker();
       this.EndDateLabel = new System.Windows.Forms.Label();
       this.EndDateTimePicker = new System.Windows.Forms.DateTimePicker();
-      this.SearchButton = new System.Windows.Forms.Button();
+      this.SaveButton = new System.Windows.Forms.Button();
       this.CancelButton = new System.Windows.Forms.Button();
-      this.ResultBox = new System.Windows.Forms.RichTextBox();
-      this.sqLiteConnection1 = new System.Data.SQLite.SQLiteConnection();
-      this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
+      this.sqlConn = new System.Data.SQLite.SQLiteConnection();
+      this.sqlDoReport = new System.Data.SQLite.SQLiteCommand();
+      this.ResultsGrid = new System.Windows.Forms.DataGridView();
+      ((System.ComponentModel.ISupportInitialize)(this.ResultsGrid)).BeginInit();
       this.SuspendLayout();
       // 
       // Title
@@ -67,6 +68,7 @@
       this.BeginDateTimePicker.Name = "BeginDateTimePicker";
       this.BeginDateTimePicker.Size = new System.Drawing.Size(270, 26);
       this.BeginDateTimePicker.TabIndex = 3;
+      this.BeginDateTimePicker.ValueChanged += new System.EventHandler(this.BeginDateTimePicker_ValueChanged);
       // 
       // EndDateLabel
       // 
@@ -86,22 +88,23 @@
       this.EndDateTimePicker.Name = "EndDateTimePicker";
       this.EndDateTimePicker.Size = new System.Drawing.Size(268, 26);
       this.EndDateTimePicker.TabIndex = 5;
+      this.EndDateTimePicker.ValueChanged += new System.EventHandler(this.EndDateTimePicker_ValueChanged);
       // 
-      // SearchButton
+      // SaveButton
       // 
-      this.SearchButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.SearchButton.Location = new System.Drawing.Point(168, 355);
-      this.SearchButton.Name = "SearchButton";
-      this.SearchButton.Size = new System.Drawing.Size(132, 33);
-      this.SearchButton.TabIndex = 6;
-      this.SearchButton.Text = "Search";
-      this.SearchButton.UseVisualStyleBackColor = true;
-      this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+      this.SaveButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.SaveButton.Location = new System.Drawing.Point(168, 400);
+      this.SaveButton.Name = "SaveButton";
+      this.SaveButton.Size = new System.Drawing.Size(132, 33);
+      this.SaveButton.TabIndex = 6;
+      this.SaveButton.Text = "Save";
+      this.SaveButton.UseVisualStyleBackColor = true;
+      this.SaveButton.Click += new System.EventHandler(this.SearchButton_Click);
       // 
       // CancelButton
       // 
-      this.CancelButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CancelButton.Location = new System.Drawing.Point(358, 357);
+      this.CancelButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CancelButton.Location = new System.Drawing.Point(358, 402);
       this.CancelButton.Name = "CancelButton";
       this.CancelButton.Size = new System.Drawing.Size(132, 33);
       this.CancelButton.TabIndex = 7;
@@ -109,25 +112,24 @@
       this.CancelButton.UseVisualStyleBackColor = true;
       this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
       // 
-      // ResultBox
+      // sqlConn
       // 
-      this.ResultBox.BackColor = System.Drawing.Color.Azure;
-      this.ResultBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.ResultBox.Location = new System.Drawing.Point(150, 253);
-      this.ResultBox.Name = "ResultBox";
-      this.ResultBox.Size = new System.Drawing.Size(359, 80);
-      this.ResultBox.TabIndex = 8;
-      this.ResultBox.Text = "";
+      this.sqlConn.DefaultTimeout = 30;
+      this.sqlConn.Flags = System.Data.SQLite.SQLiteConnectionFlags.LogCallbackException;
+      this.sqlConn.ParseViaFramework = false;
       // 
-      // sqLiteConnection1
+      // sqlDoReport
       // 
-      this.sqLiteConnection1.DefaultTimeout = 30;
-      this.sqLiteConnection1.Flags = System.Data.SQLite.SQLiteConnectionFlags.LogCallbackException;
-      this.sqLiteConnection1.ParseViaFramework = false;
+      this.sqlDoReport.CommandText = null;
       // 
-      // sqLiteCommand1
+      // ResultsGrid
       // 
-      this.sqLiteCommand1.CommandText = null;
+      this.ResultsGrid.AllowUserToAddRows = false;
+      this.ResultsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.ResultsGrid.Location = new System.Drawing.Point(123, 242);
+      this.ResultsGrid.Name = "ResultsGrid";
+      this.ResultsGrid.Size = new System.Drawing.Size(412, 152);
+      this.ResultsGrid.TabIndex = 8;
       // 
       // EditItem
       // 
@@ -135,9 +137,9 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.Azure;
       this.ClientSize = new System.Drawing.Size(659, 476);
-      this.Controls.Add(this.ResultBox);
+      this.Controls.Add(this.ResultsGrid);
       this.Controls.Add(this.CancelButton);
-      this.Controls.Add(this.SearchButton);
+      this.Controls.Add(this.SaveButton);
       this.Controls.Add(this.EndDateTimePicker);
       this.Controls.Add(this.EndDateLabel);
       this.Controls.Add(this.BeginDateTimePicker);
@@ -148,6 +150,7 @@
       this.Name = "EditItem";
       this.Text = "Edit Item";
       this.Load += new System.EventHandler(this.EditItem_Load);
+      ((System.ComponentModel.ISupportInitialize)(this.ResultsGrid)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -160,11 +163,11 @@
         private System.Windows.Forms.DateTimePicker BeginDateTimePicker;
         private System.Windows.Forms.Label EndDateLabel;
         private System.Windows.Forms.DateTimePicker EndDateTimePicker;
-        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.RichTextBox ResultBox;
-        private System.Data.SQLite.SQLiteConnection sqLiteConnection1;
-        private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
+        private System.Data.SQLite.SQLiteConnection sqlConn;
+        private System.Data.SQLite.SQLiteCommand sqlDoReport;
+        private System.Windows.Forms.DataGridView ResultsGrid;
 
     }
 }
