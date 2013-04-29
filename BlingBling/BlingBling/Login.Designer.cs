@@ -124,6 +124,7 @@
       // 
       // sqlDoLogin
       // 
+      this.sqlDoLogin.CommandText = null;
       this.sqlDoLogin.Connection = this.sqlConn;
       // 
       // LoginPage
@@ -143,6 +144,7 @@
       this.MaximizeBox = false;
       this.Name = "LoginPage";
       this.Text = "Login";
+      this.Load += new System.EventHandler(this.LoginPage_Load);
       ((System.ComponentModel.ISupportInitialize)(this.errLogin)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();

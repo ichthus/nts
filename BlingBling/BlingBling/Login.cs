@@ -31,12 +31,13 @@ namespace BlingBling
           SQLiteDataReader sqldr;
           SHA512 shaM = new SHA512Managed();
           Form w = null;
-          string sqlstmt = "SELECT nts_users.username, nts_users.password, nts_users.realname, nts_users.lastlogin, nts_users.userkey, nts_admins.userkey AS admin FROM nts_users LEFT OUTER JOIN nts_admins ON nts_users.userkey = nts_admins.userkey where nts_users.username = 'USERNAME_PARSE' and nts_users.password = 'PASSWORD_HASH'";
 
           sqlConn.Open();
           errLogin.Clear();
 
           string phash = GetSHA512Hash(shaM, PasswordTextBox.Text);
+
+          string sqlstmt = "SELECT nts_users.username, nts_users.password, nts_users.realname, nts_users.lastlogin, nts_users.userkey, nts_admins.userkey AS admin FROM nts_users LEFT OUTER JOIN nts_admins ON nts_users.userkey = nts_admins.userkey where nts_users.username = '"+UsernameTextBox.Text+"' and nts_users.password = '"+phash+"'";
 
           sqlDoLogin.CommandText = sqlstmt.Replace("USERNAME_PARSE",UsernameTextBox.Text.ToLower()).Replace("PASSWORD_HASH", phash);
           
@@ -54,7 +55,7 @@ namespace BlingBling
           sqldr.Read();
           if (sqldr.IsDBNull(sqldr.GetOrdinal("admin")))
           {
-              w = new WelcomePage();
+            w = new WelcomePage();
           }
           else
           {
@@ -107,8 +108,6 @@ namespace BlingBling
             return false;
           }
         }
-
-
 
     }
 
