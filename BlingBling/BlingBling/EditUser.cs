@@ -64,11 +64,14 @@ namespace BlingBling
 
         private void editButton(object sender, EventArgs e)
         {
+            passhasher ph = new passhasher();
             string sqlquery = "";
             string rname = nameTextBox.Text;
             string uname = UsernameTextBox.Text;
             string pwd = PasswordTextBox.Text;
-            /*
+
+            pwd = ph.GetSHA512Hash(pwd);
+            
             if (PasswordTextBox.Text != "")
             {
                 if (PasswordTextBox.Text != PasswordTextBox2.Text)
@@ -80,9 +83,9 @@ namespace BlingBling
                 sqlquery = "UPDATE nts_users SET username = '" + uname + "', password = '" + pwd + "', realname = '" + rname + "' WHERE userkey = " + ukey + ";";
             }
             else
-            {**/
+            {
                 sqlquery = "UPDATE nts_users SET username = '" + uname + "', realname = '" + rname + "' WHERE userkey = " + ukey + ";";
-           // }**/
+            }
             //sqlquery = "UPDATE nts_users SET realname = 'Crack Bandit' WHERE userkey=2;";
             //MessageBox.Show(sqlquery);
                 SQLiteDataReader reader;
