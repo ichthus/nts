@@ -6,7 +6,7 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="blingdb" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=d:\Users\gregg\Desktop\NTSFromChrista\BlingBling\bling.db</Value>
+      <Value Profile="(Default)">Data Source=C:\Users\Jeremy\My Documents\Github\nts\BlingBling\BlingBling\bling.db</Value>
     </Setting>
   </Settings>
 </SettingsFile>

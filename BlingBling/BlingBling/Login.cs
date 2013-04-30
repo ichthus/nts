@@ -77,6 +77,11 @@ namespace BlingBling
           this.Close();
         }
 
+        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
 

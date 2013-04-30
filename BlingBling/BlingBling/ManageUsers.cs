@@ -23,17 +23,17 @@ namespace BlingBling
 
         private void DeleteUserButton_Click(object sender, EventArgs e)
         {
-          //Form w = new DeleteUser();
+          Form w = new DeleteUser();
           this.Hide();
-          //w.ShowDialog();
+          w.ShowDialog();
           this.Show();
         }
 
         private void EditUserButton_Click(object sender, EventArgs e)
         {
-          //Form w = new EditUser();
+          Form w = new EditUser();
           this.Hide();
-          //w.ShowDialog();
+          w.ShowDialog();
           this.Show();
 
         }

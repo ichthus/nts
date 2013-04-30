@@ -37,7 +37,8 @@ namespace BlingBling.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=d:\\Users\\gregg\\Desktop\\NTSFromChrista\\BlingBling\\bling.db")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=C:\\Users\\Jeremy\\My Documents\\Github\\nts\\BlingBling\\BlingBling\\bling.d" +
+            "b")]
         public string blingdb {
             get {
                 return ((string)(this["blingdb"]));

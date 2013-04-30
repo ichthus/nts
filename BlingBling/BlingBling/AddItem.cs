@@ -134,6 +134,8 @@ namespace BlingBling
           //  categories.Add(new BudgetCategory(i, s));
           //}
           //MessageBox.Show("test");
+          categories.Add(new BudgetCategory(1, "Income"));
+          categories.Add(new BudgetCategory(2, "Bills"));
           categories.Add(new BudgetCategory(3, "Groceries"));
           categories.Add(new BudgetCategory(4, "Electricity"));
           categories.Add(new BudgetCategory(5, "Rent/Mortgage"));

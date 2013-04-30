@@ -26,13 +26,33 @@ namespace BlingBling
             string sqlquery = "";
             string rname = nameTextBox.Text;
             string uname = UsernameTextBox.Text;
-
-            sqlquery = "DELETE * FROM nts_users, nts_budget_items, nts_admins WHERE userkey= " + ukey.ToString() + ";";
-            MessageBox.Show(sqlquery);
+            
+            
+            //MessageBox.Show(sqlquery);
             sqlConn.Open();
+
+            SQLiteDataReader reader;
+            sqlquery = "DELETE FROM nts_budget_items WHERE userkey= " + ukey + ";";
             sqlDoCmd.CommandText = sqlquery;
+            reader = sqlDoCmd.ExecuteReader();
+
+            if (reader.RecordsAffected > 0)
+                MessageBox.Show("User budget items successfully deleted!");
+           
+
+            reader.Close();
+
+           
+            sqlquery = "DELETE FROM nts_users WHERE userkey= " + ukey + ";";
+            sqlDoCmd.CommandText = sqlquery;
+            reader = sqlDoCmd.ExecuteReader();
+
+            if (reader.RecordsAffected > 0)
+                MessageBox.Show("User successfully deleted!");
+
             sqlConn.Close();
 
+            UsernameEntryBox.Text = "";
             nameTextBox.Text = "";
             UsernameTextBox.Text = "";
             nameLabel.Visible = false;
