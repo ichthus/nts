@@ -31,7 +31,7 @@ namespace BlingBling
         private void EditItem_Load(object sender, EventArgs e)
         {
           BeginDateTimePicker.Text = DateTime.Now.AddMonths(-1).ToString();
-          RunReport();
+        //  RunReport();
           BeginDateTimePicker.MaxDate = DateTime.Now;
           EndDateTimePicker.MinDate = DateTime.Now.AddMonths(-1);
 
@@ -40,13 +40,13 @@ namespace BlingBling
         private void BeginDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
           EndDateTimePicker.MinDate = BeginDateTimePicker.Value;
-          RunReport();
+         // RunReport();
         }
 
         private void EndDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
           BeginDateTimePicker.MaxDate = EndDateTimePicker.Value;          
-          RunReport();
+         // RunReport();
         }
 
         private void RunReport()

@@ -42,5 +42,15 @@ namespace BlingBling
 
         }
 
+        private void BeginDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+          EndDateTimePicker.MinDate = BeginDateTimePicker.Value;
+        }
+
+        private void EndDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+          BeginDateTimePicker.MaxDate = EndDateTimePicker.Value;
+        }
+
     }
 }

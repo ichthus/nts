@@ -67,6 +67,7 @@
       this.BeginDateTimePicker.Name = "BeginDateTimePicker";
       this.BeginDateTimePicker.Size = new System.Drawing.Size(270, 26);
       this.BeginDateTimePicker.TabIndex = 4;
+      this.BeginDateTimePicker.ValueChanged += new System.EventHandler(this.BeginDateTimePicker_ValueChanged);
       // 
       // EndDateLabel
       // 
@@ -86,6 +87,7 @@
       this.EndDateTimePicker.Name = "EndDateTimePicker";
       this.EndDateTimePicker.Size = new System.Drawing.Size(268, 26);
       this.EndDateTimePicker.TabIndex = 6;
+      this.EndDateTimePicker.ValueChanged += new System.EventHandler(this.EndDateTimePicker_ValueChanged);
       // 
       // SearchButton
       // 

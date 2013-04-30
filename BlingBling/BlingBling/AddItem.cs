@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using System.Collections;
 using System.Data.SQLite;
 
 namespace BlingBling
@@ -37,14 +38,14 @@ namespace BlingBling
                 // add item to DB
 
                 int ukey = 2;
-                string command="insert into nts_budget_items(`userkey`, `date`, `name`, `amount`) values("+ukey+",\""+dateTimePicker1.Text+"\",\""+DescriptionTextBox.Text+"\","+ float.Parse(AmountTextBox.Text)+");";
-                
-       
-          
+                string command="insert into nts_budget_items(`userkey`, `date`, `name`, `amount`, `catkey`) values("+ukey+", "+dateTimePicker1.Value.ToString("yyyyMMdd")+",\""+DescriptionTextBox.Text+"\","+ AmountTextBox.Text+", "+CategoryMenu.SelectedValue+");";
                 sqlConn.Open();
-
+                SQLiteDataReader reader;
+                
                 sqlDoReport.CommandText = command;
-             
+
+                reader = sqlDoReport.ExecuteReader();
+                
                 sqlConn.Close();
 
                 // alert user that item was successfully added to DB - this needs an if statement!
@@ -55,6 +56,7 @@ namespace BlingBling
                 CategoryMenu.ResetText();
                 DescriptionTextBox.ResetText();
                 AmountTextBox.ResetText();
+                CategoryMenu.ClearSelected();
             }
             
                
@@ -94,11 +96,49 @@ namespace BlingBling
 
         private void AddItem_Load(object sender, EventArgs e)
         {
+          SQLiteDataReader reader = null;
+          /*
+               catkey INTEGER PRIMARY KEY AUTOINCREMENT,
+               income INTEGER NOT NULL,
+               name VARCHAR(50) NOT NULL,
+               descr TEXT
+          */
+          string command = "select `catkey`, `name` from nts_budget_category where `income` = 0;";
+          sqlConn.Open();
 
+
+          sqlDoReport.CommandText = command;
+          reader = sqlDoReport.ExecuteReader();
+
+          CategoryMenu.BeginUpdate();
+ 
+          ArrayList categories = new ArrayList();
+          //int i;
+          //string s = "";
+          //while (reader.Read())
+          //{
+          //  i = (int)(reader[1]);
+          //  s = (string)(reader[2]);
+          //  MessageBox.Show(s);
+
+          //  categories.Add(new BudgetCategory(i, s));
+          //}
+          //MessageBox.Show("test");
+          categories.Add(new BudgetCategory(3, "Groceries"));
+          categories.Add(new BudgetCategory(4, "Electricity"));
+          categories.Add(new BudgetCategory(5, "Rent/Mortgage"));
+          categories.Add(new BudgetCategory(6, "Entertainment"));
+          categories.Add(new BudgetCategory(7, "Phone"));
+          CategoryMenu.DataSource = categories;
+          CategoryMenu.DisplayMember = "Text";
+          CategoryMenu.ValueMember = "Value";
+          //CategoryMenu.Sorted = true;
+          CategoryMenu.EndUpdate();
+
+          CategoryMenu.ClearSelected();
+
+          reader.Close();
+          sqlConn.Close();
         }
-    
-
-
-       
     }
 }

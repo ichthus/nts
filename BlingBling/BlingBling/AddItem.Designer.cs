@@ -58,7 +58,7 @@
       // 
       this.AmountLabel.AutoSize = true;
       this.AmountLabel.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.AmountLabel.Location = new System.Drawing.Point(147, 182);
+      this.AmountLabel.Location = new System.Drawing.Point(147, 155);
       this.AmountLabel.Name = "AmountLabel";
       this.AmountLabel.Size = new System.Drawing.Size(106, 27);
       this.AmountLabel.TabIndex = 1;
@@ -66,7 +66,7 @@
       // 
       // AmountTextBox
       // 
-      this.AmountTextBox.Location = new System.Drawing.Point(250, 189);
+      this.AmountTextBox.Location = new System.Drawing.Point(250, 162);
       this.AmountTextBox.Name = "AmountTextBox";
       this.AmountTextBox.Size = new System.Drawing.Size(259, 20);
       this.AmountTextBox.TabIndex = 2;
@@ -75,7 +75,7 @@
       // 
       this.CategoryLabel.AutoSize = true;
       this.CategoryLabel.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CategoryLabel.Location = new System.Drawing.Point(134, 228);
+      this.CategoryLabel.Location = new System.Drawing.Point(134, 201);
       this.CategoryLabel.Name = "CategoryLabel";
       this.CategoryLabel.Size = new System.Drawing.Size(110, 27);
       this.CategoryLabel.TabIndex = 3;
@@ -86,22 +86,14 @@
       this.CategoryMenu.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.CategoryMenu.FormattingEnabled = true;
       this.CategoryMenu.ItemHeight = 22;
-      this.CategoryMenu.Items.AddRange(new object[] {
-            "Income",
-            "Bill",
-            "Groceries",
-            "Household Item",
-            "Clothing",
-            "Entertainment",
-            "Miscellaneous"});
-      this.CategoryMenu.Location = new System.Drawing.Point(250, 228);
+      this.CategoryMenu.Location = new System.Drawing.Point(250, 201);
       this.CategoryMenu.Name = "CategoryMenu";
-      this.CategoryMenu.Size = new System.Drawing.Size(259, 26);
+      this.CategoryMenu.Size = new System.Drawing.Size(259, 70);
       this.CategoryMenu.TabIndex = 4;
       // 
       // AddButton
       // 
-      this.AddButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.AddButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.AddButton.Location = new System.Drawing.Point(169, 386);
       this.AddButton.Name = "AddButton";
       this.AddButton.Size = new System.Drawing.Size(148, 36);
@@ -112,12 +104,12 @@
       // 
       // CancelButton
       // 
-      this.CancelButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CancelButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.CancelButton.Location = new System.Drawing.Point(360, 386);
       this.CancelButton.Name = "CancelButton";
       this.CancelButton.Size = new System.Drawing.Size(148, 36);
       this.CancelButton.TabIndex = 6;
-      this.CancelButton.Text = "Cancel";
+      this.CancelButton.Text = "Close";
       this.CancelButton.UseVisualStyleBackColor = true;
       this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
       // 
@@ -143,7 +135,7 @@
       // 
       this.DescriptionLabel.AutoSize = true;
       this.DescriptionLabel.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.DescriptionLabel.Location = new System.Drawing.Point(127, 284);
+      this.DescriptionLabel.Location = new System.Drawing.Point(127, 288);
       this.DescriptionLabel.Name = "DescriptionLabel";
       this.DescriptionLabel.Size = new System.Drawing.Size(126, 27);
       this.DescriptionLabel.TabIndex = 9;
@@ -152,7 +144,7 @@
       // DescriptionTextBox
       // 
       this.DescriptionTextBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.DescriptionTextBox.Location = new System.Drawing.Point(250, 284);
+      this.DescriptionTextBox.Location = new System.Drawing.Point(250, 288);
       this.DescriptionTextBox.Name = "DescriptionTextBox";
       this.DescriptionTextBox.Size = new System.Drawing.Size(259, 26);
       this.DescriptionTextBox.TabIndex = 10;
@@ -162,7 +154,7 @@
       this.SuccessTextBox.BackColor = System.Drawing.Color.Azure;
       this.SuccessTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.SuccessTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.SuccessTextBox.Location = new System.Drawing.Point(94, 100);
+      this.SuccessTextBox.Location = new System.Drawing.Point(94, 93);
       this.SuccessTextBox.Name = "SuccessTextBox";
       this.SuccessTextBox.Size = new System.Drawing.Size(471, 56);
       this.SuccessTextBox.TabIndex = 11;
@@ -178,6 +170,7 @@
       // sqlDoReport
       // 
       this.sqlDoReport.CommandText = null;
+      this.sqlDoReport.Connection = this.sqlConn;
       // 
       // AddItem
       // 

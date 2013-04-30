@@ -11,9 +11,48 @@ CREATE TABLE IF NOT EXISTS `nts_budget_category` (
 public class BudgetCategory
 {
 	private int     _catkey;     // primary key
-	private bool _income;     // Income is true. Expenditure is false.
 	private string  _name;       // Name of the budget item type.
 	private string  _descr;      // Description of the budget item type
-	    
-	   //add functions.
+
+  public BudgetCategory(int c, string n)
+  {
+    _catkey = c;
+    _name = n;
+  }
+
+  public BudgetCategory(int c, string n, string d)
+  {
+    _catkey = c;
+    _name = n;
+    _descr = d;
+  }
+
+  public int Value
+  {
+    get
+    {
+      return _catkey;
+    }
+  }
+
+  public string Text
+  {
+
+    get
+    {
+      return _name;
+    }
+  }
+
+  public string Description
+  {
+    get
+    {
+      return _descr;
+    }
+  }
+  public string ToString()
+  {
+    return _name;
+  }
 }
