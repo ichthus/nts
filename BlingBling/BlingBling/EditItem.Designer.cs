@@ -100,6 +100,7 @@
             this.SaveButton.TabIndex = 6;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Visible = false;
             this.SaveButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // CancelButton
@@ -136,11 +137,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(31, 180);
+            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(549, 205);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(98, 33);
             this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
+            this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.SearchButton_Click);
             // 
@@ -153,12 +155,12 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ResultsGrid);
             this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.EndDateTimePicker);
             this.Controls.Add(this.EndDateLabel);
             this.Controls.Add(this.BeginDateTimePicker);
             this.Controls.Add(this.BeginDateLabel);
             this.Controls.Add(this.Title);
+            this.Controls.Add(this.SaveButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "EditItem";
