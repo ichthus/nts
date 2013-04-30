@@ -37,7 +37,7 @@ namespace BlingBling
 
                 // add item to DB
 
-                int ukey = 2;
+                int ukey = Properties.Settings.Default.userkey;
                 string command="insert into nts_budget_items(`userkey`, `date`, `name`, `amount`, `catkey`) values("+ukey+", "+dateTimePicker1.Value.ToString("yyyyMMdd")+",\""+DescriptionTextBox.Text+"\","+ AmountTextBox.Text+", "+CategoryMenu.SelectedValue+");";
                 sqlConn.Open();
                 SQLiteDataReader reader;
@@ -49,8 +49,14 @@ namespace BlingBling
                 sqlConn.Close();
 
                 // alert user that item was successfully added to DB - this needs an if statement!
-                SuccessTextBox.Text="Item successfully added to your budget!";
-
+                if (reader.RecordsAffected > 0)
+                {
+                  SuccessTextBox.Text = "Item successfully added to your budget!";
+                }
+                else
+                {
+                  SuccessTextBox.Text = "There has been an error in adding your item.";
+                }
                 // reset window
                 dateTimePicker1.ResetText();
                 CategoryMenu.ResetText();
@@ -96,6 +102,10 @@ namespace BlingBling
 
         private void AddItem_Load(object sender, EventArgs e)
         {
+          
+          sqlConn.ConnectionString = Properties.Settings.Default.blingdb;
+
+
           SQLiteDataReader reader = null;
           /*
                catkey INTEGER PRIMARY KEY AUTOINCREMENT,

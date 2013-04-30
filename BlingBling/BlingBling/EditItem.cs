@@ -30,36 +30,40 @@ namespace BlingBling
 
         private void EditItem_Load(object sender, EventArgs e)
         {
+          sqlConn.ConnectionString = Properties.Settings.Default.blingdb;
           BeginDateTimePicker.Text = DateTime.Now.AddMonths(-1).ToString();
-        //  RunReport();
           BeginDateTimePicker.MaxDate = DateTime.Now;
           EndDateTimePicker.MinDate = DateTime.Now.AddMonths(-1);
-
+          RunReport();
         }
 
         private void BeginDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
           EndDateTimePicker.MinDate = BeginDateTimePicker.Value;
-         // RunReport();
+          RunReport();
         }
 
         private void EndDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-          BeginDateTimePicker.MaxDate = EndDateTimePicker.Value;          
-         // RunReport();
+          BeginDateTimePicker.MaxDate = EndDateTimePicker.Value;
+          RunReport();
         }
 
         private void RunReport()
         {
-          string command = "select * from nts_budget_items where `date` > " + BeginDateTimePicker.Value.ToString("yyyyMMdd") + " and `date` < " + EndDateTimePicker.Value.ToString("yyyyMMdd") + ";";
+          string command = "select * from nts_budget_items where `date` >= " + BeginDateTimePicker.Value.ToString("yyyyMMdd") + " and `date` <= " + EndDateTimePicker.Value.ToString("yyyyMMdd") + ";";
           SQLiteDataReader reader;
           
           sqlConn.Open();
 
           sqlDoReport.CommandText = command;
+          
           reader = sqlDoReport.ExecuteReader();
+
           ResultsGrid.DataSource = reader;
+          
           reader.Close();
+          
           sqlConn.Close();
         }
     }

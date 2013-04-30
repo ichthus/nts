@@ -115,7 +115,6 @@
       // 
       // sqlConn
       // 
-      this.sqlConn.ConnectionString = "Data Source=D:\\Users\\gregg\\Documents\\GitHub\\nts\\BlingBling\\BlingBling\\bling.db";
       this.sqlConn.DefaultTimeout = 30;
       this.sqlConn.Flags = System.Data.SQLite.SQLiteConnectionFlags.LogCallbackException;
       this.sqlConn.ParseViaFramework = false;

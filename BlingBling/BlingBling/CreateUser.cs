@@ -92,5 +92,10 @@ namespace BlingBling
 
         }
 
+        private void CreateUser_Load(object sender, EventArgs e)
+        {
+          sqlConn.ConnectionString = Properties.Settings.Default.blingdb;
+        }
+
     }
 }

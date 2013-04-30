@@ -40,8 +40,8 @@
       this.EditButton = new System.Windows.Forms.Button();
       this.CancelButton = new System.Windows.Forms.Button();
       this.SuccessTextBox = new System.Windows.Forms.RichTextBox();
-      this.sqLiteConnection1 = new System.Data.SQLite.SQLiteConnection();
-      this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
+      this.sqlConn = new System.Data.SQLite.SQLiteConnection();
+      this.sqlDoEdit = new System.Data.SQLite.SQLiteCommand();
       this.SuspendLayout();
       // 
       // Title
@@ -170,15 +170,15 @@
       this.SuccessTextBox.TabIndex = 11;
       this.SuccessTextBox.Text = "";
       // 
-      // sqLiteConnection1
+      // sqlConn
       // 
-      this.sqLiteConnection1.DefaultTimeout = 30;
-      this.sqLiteConnection1.Flags = System.Data.SQLite.SQLiteConnectionFlags.LogCallbackException;
-      this.sqLiteConnection1.ParseViaFramework = false;
+      this.sqlConn.DefaultTimeout = 30;
+      this.sqlConn.Flags = System.Data.SQLite.SQLiteConnectionFlags.LogCallbackException;
+      this.sqlConn.ParseViaFramework = false;
       // 
-      // sqLiteCommand1
+      // sqlDoEdit
       // 
-      this.sqLiteCommand1.CommandText = null;
+      this.sqlDoEdit.CommandText = null;
       // 
       // EditAnItem
       // 
@@ -220,7 +220,7 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.RichTextBox SuccessTextBox;
-        private System.Data.SQLite.SQLiteConnection sqLiteConnection1;
-        private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
+        private System.Data.SQLite.SQLiteConnection sqlConn;
+        private System.Data.SQLite.SQLiteCommand sqlDoEdit;
     }
 }

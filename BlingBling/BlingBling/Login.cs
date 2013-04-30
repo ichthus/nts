@@ -21,7 +21,11 @@ namespace BlingBling
             InitializeComponent();
         }
 
-        private void LoginPage_Load(object sender, EventArgs e) { }
+        private void LoginPage_Load(object sender, EventArgs e) 
+        {
+          sqlConn.ConnectionString = Properties.Settings.Default.blingdb;
+
+        }
 
 
         private void QuitButton_Click(object sender, EventArgs e)
@@ -64,6 +68,7 @@ namespace BlingBling
           {
             w = new WelcomeAdmin();
           }
+          Properties.Settings.Default.userkey = Convert.ToInt32(sqldr["userkey"]);
           //on successful login
           sqldr.Close(); 
           sqlConn.Close();
