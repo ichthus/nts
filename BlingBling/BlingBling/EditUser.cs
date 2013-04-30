@@ -80,14 +80,21 @@ namespace BlingBling
                 sqlquery = "UPDATE nts_users SET username = '" + uname + "', password = '" + pwd + "', realname = '" + rname + "' WHERE userkey = " + ukey + ";";
             }
             else
-            {
+            {**/
                 sqlquery = "UPDATE nts_users SET username = '" + uname + "', realname = '" + rname + "' WHERE userkey = " + ukey + ";";
-            }**/
+           // }**/
             //sqlquery = "UPDATE nts_users SET realname = 'Crack Bandit' WHERE userkey=2;";
             //MessageBox.Show(sqlquery);
+                SQLiteDataReader reader;
+
             sqlConn.Open();
             sqlDoCmd.CommandText = sqlquery;
+            reader = sqlDoCmd.ExecuteReader();
+            reader.Close();
             sqlConn.Close();
+            if (reader.RecordsAffected > 0)
+                MessageBox.Show("User info successfully changed!");
+          
 
             nameTextBox.Text = "";
             UsernameTextBox.Text = "";
@@ -102,6 +109,8 @@ namespace BlingBling
             PasswordLabel2.Visible = false;
             PasswordTextBox2.Visible = false;
             EditButton.Visible = false;
+
+            
             
 
         }
